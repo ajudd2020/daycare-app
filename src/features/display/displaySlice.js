@@ -103,6 +103,9 @@ export const setPageData = (location, params, mode) => (dispatch) => {
           pathObject.type = "about";
       }
       break;
+    case "edit":
+      pathObject.mode = "edit";
+      break;
     default:
       pathObject.mode = "view";
   }
