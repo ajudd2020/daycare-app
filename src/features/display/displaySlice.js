@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import cloneDeep from "lodash/cloneDeep";
 
 const initialState = {
   pages: [],
@@ -11,24 +11,8 @@ const initialState = {
   },
 };
 
-// thunks
-export const setPageData = (params, mode) => (dispatch) => {
-  console.log("PARAMS", params);
-  const pathObject = {};
-  switch (mode) {
-    case "view":
-      pathObject.mode = "view";
-      pathObject.class = params.class ? params.class : "classList";
-      //   pathObject.id = params.id ? params.id : "1";
-      break;
-    default:
-      pathObject.mode = "view";
-    //   pathObject.type = "home";
-  }
-  console.log("path object", pathObject);
-};
-
-// async thunks
+// async thunks for doing all the async things.
+// These will use different reducers, which will check the status of the thunk itself. When running, it will be "pending". When it returns the payload, it will be "idle". This will trigger the reducer to update state.
 export const getPagesThunk = createAsyncThunk("api/pages", async () => {
   const response = await axios.get("/api/pages");
   return response.data;
@@ -42,6 +26,9 @@ export const getTextContentThunk = createAsyncThunk(
   }
 );
 
+// the slice aka the heart and soul of the store
+// this is where the reducer is created along with the actions that will update said reducer.
+// This is probably the biggest difference from the old redux. The actions are now defined inside of the reducer, instead of needing to constantly type repeated code. It does away with all that fun UPPER CASE stuff I'm sure you love as much as I do.
 export const dispalySlice = createSlice({
   name: "display",
   initialState,
@@ -50,6 +37,9 @@ export const dispalySlice = createSlice({
     setDimensions: (state, action) => {
       state.dimensions.height = action.payload.height;
       state.dimensions.width = action.payload.width;
+    },
+    setPathObject: (state, action) => {
+      state.path = action.payload;
     },
     test: {
       reducer: (state, action) => {
@@ -62,13 +52,13 @@ export const dispalySlice = createSlice({
     },
   },
 
+  // These are the fun extra reducers that handle our async thunks. They will decide what to do with the payload once the thunk is done.
   extraReducers: (builder) => {
     builder
       .addCase(getPagesThunk.pending, (state) => {
         state.status = "loading";
       })
       .addCase(getPagesThunk.fulfilled, (state, action) => {
-        console.log("ACTION", action);
         state.status = "idle";
         state.pages = action.payload;
       })
@@ -76,14 +66,50 @@ export const dispalySlice = createSlice({
         state.textBlocks = "loading";
       })
       .addCase(getTextContentThunk.fulfilled, (state, action) => {
-        console.log("ACTION", action);
         state.status = "idle";
         state.textBlocks = action.payload;
       });
   },
 });
 
-export const { loadPages, setDimensions } = dispalySlice.actions;
+// export those actions!
+export const { loadPages, setDimensions, setPathObject } = dispalySlice.actions;
+
+// thunks, just like the thunks we all know and love.
+// These do not return an action, they return a function. The function takes in dispatch so it can dispatch an action (or another thunk) to send along to the reducer
+export const setPageData = (location, params, mode) => (dispatch) => {
+  const locationClone = cloneDeep(location);
+  const locationArr = locationClone.pathname.slice(1).split("/");
+  console.log("location arr", locationArr);
+
+  const pathObject = {};
+  switch (mode) {
+    case "view":
+      pathObject.mode = "view";
+      switch (locationArr[1]) {
+        case "about":
+          pathObject.type = locationArr[1];
+          pathObject.page = params.page ? params.page : "";
+          break;
+        case "classes":
+          pathObject.type = locationArr[1];
+          pathObject.id = params.classId ? params.classId : "";
+          break;
+        case "staff":
+          pathObject.type = locationArr[1];
+          pathObject.id = params.staffId ? params.staffId : "";
+          break;
+        default:
+          pathObject.type = "about";
+      }
+      break;
+    default:
+      pathObject.mode = "view";
+  }
+  console.log("path object", pathObject);
+  dispatch(setPathObject(pathObject));
+};
+
 // // The function below is called a selector and allows us to select a value from
 // // the state. Selectors can also be defined inline where they're used instead of
 // // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`

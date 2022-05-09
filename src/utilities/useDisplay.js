@@ -1,14 +1,16 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { setDimensions, setPageData } from "../features/display/displaySlice";
 
 const useDisplay = (mode) => {
   const dispatch = useDispatch();
   const params = useParams();
+  const location = useLocation();
 
   useEffect(() => {
-    dispatch(setPageData(params, mode));
+    dispatch(setPageData(location, params, mode));
   }, [params]);
 
   useEffect(() => {
