@@ -8,15 +8,15 @@ The point of this project is to have fun, try out my skills in a solo developmen
 
 ## Languages/ Frameworks Used
 
-JavaScript
-React
-Redux
-React Router
-NodeJS
-Express
-PostgreSQL
-Sequelize
-MUI
+- JavaScript
+- React
+- Redux
+- React Router
+- NodeJS
+- Express
+- PostgreSQL
+- Sequelize
+- MUI
 
 ## Future Plans
 
@@ -26,6 +26,6 @@ After getting the basics deployed in the cloud, I hope to continue exploring AWS
 
 ## Other langauges/ technologies I'm familiar with not included in this project:
 
-AWS - Lambda, DynamoDb, State/Step Machines, CloudWatch, API Gateway, EventBridge, SNS
-Python - basic scripting
-PHP/ Drupal
+- AWS - Lambda, DynamoDb, State/Step Machines, CloudWatch, API Gateway, EventBridge, SNS
+- Python - basic scripting
+- PHP/ Drupal
