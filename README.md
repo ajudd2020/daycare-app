@@ -29,3 +29,5 @@ After getting the basics deployed in the cloud, I hope to continue exploring AWS
 - AWS - Lambda, DynamoDb, State/Step Machines, CloudWatch, API Gateway, EventBridge, SNS
 - Python - basic scripting
 - PHP/ Drupal
+
+For reference, this is my previous portfolio, coded before bootcamp, with nothing more than youtube to help me: [my portfolio](https://ajudd2020.github.io/)
