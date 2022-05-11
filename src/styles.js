@@ -18,10 +18,16 @@ export const daycareTheme = createTheme({
       blue: "#5e4de1",
       pink: "#e14dd0",
     },
+    complementary: {
+      main: "#e15e4d",
+    },
   },
   typography: {
     lightColor: { color: "#fafafa" },
     darkColor: { color: "#000000" },
+    complementary: { color: "#e15e4d" },
+    triadicBlue: { color: "#5e4de1" },
+    triadicPink: { color: "#e14dd0" },
   },
 });
 

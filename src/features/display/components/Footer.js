@@ -24,7 +24,7 @@ const Footer = () => {
           <NavBarText>Test</NavBarText>
         </NavBarItem>
       </Link> */}
-      <Typography>This is a sample footer</Typography>
+      <Typography variant={"darkColor"}>This is a sample footer</Typography>
     </Box>
   );
 };

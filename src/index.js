@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { daycareTheme } from "./styles";
+import Main from "./features/main/Main";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -17,7 +18,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <ThemeProvider theme={daycareTheme}>
-          <App />
+          <Main />
         </ThemeProvider>
       </Provider>
     </BrowserRouter>
