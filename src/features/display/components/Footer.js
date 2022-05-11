@@ -4,7 +4,7 @@ import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { NavBarItem, NavBarText } from "../../../../styles";
+import { NavBarItem, NavBarText } from "../../../styles";
 // import { testThunk } from "./testSlice";
 
 const Footer = () => {
