@@ -8,6 +8,7 @@ import Home from "../pages/Home";
 import usePageData from "../../../../utilities/usePageData";
 
 const AboutContainer = () => {
+  console.log("ABOUT CONTAINER");
   const dispatch = useDispatch();
   const { mode, pageType, pageName, pageCategory } = useSelector(
     (state) => get(state, ["display", "path"], {}),

@@ -22,14 +22,14 @@ async function seed() {
       title: "Announcement 1 Page",
       pageType: "about",
       pageName: "announcement1",
-      pageCategory: "announcement",
+      pageCategory: "announcements",
       textContent: "This is the content for an ANNOUNCEMENT",
     },
     {
       title: "Newsletter 1 Page",
       pageType: "about",
       pageName: "newsletter1",
-      pageCategory: "newsletter",
+      pageCategory: "newsletters",
       textContent: "This is the content for a NEWSLETTER",
     },
   ];

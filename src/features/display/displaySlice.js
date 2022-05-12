@@ -33,16 +33,16 @@ export const setPathData = (location, params, mode) => (dispatch) => {
           pathObject.pageType = locationArr[1];
           pathObject.pageCategory = params.pageCategory
             ? params.pageCategory
-            : undefined;
+            : "home";
           pathObject.pageName = params.pageName ? params.pageName : undefined;
           break;
         case "classes":
           pathObject.pageType = locationArr[1];
-          pathObject.id = params.classId ? params.classId : "";
+          pathObject.id = params.classId ? params.classId : "all";
           break;
         case "staff":
           pathObject.pageType = locationArr[1];
-          pathObject.id = params.staffId ? params.staffId : "";
+          pathObject.id = params.staffId ? params.staffId : "all";
           break;
         default:
           pathObject.pageType = "about";

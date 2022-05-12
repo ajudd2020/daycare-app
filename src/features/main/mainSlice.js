@@ -4,9 +4,7 @@ import cloneDeep from "lodash/cloneDeep";
 import { useSelector } from "react-redux";
 
 const initialState = {
-  about: [],
-  staff: [],
-  classes: [],
+  content: {},
   dimensions: {
     height: 0,
     width: 0,
@@ -64,21 +62,21 @@ export const displaySlice = createSlice({
       })
       .addCase(getGeneralPagesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.about = action.payload;
+        state.content.about = action.payload;
       })
       .addCase(getClassesThunk.pending, (state) => {
         state.status = "loading";
       })
       .addCase(getClassesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.classes = action.payload;
+        state.content.classes = action.payload;
       })
       .addCase(getStaffThunk.pending, (state) => {
         state.status = "loading";
       })
       .addCase(getStaffThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.staff = action.payload;
+        state.content.staff = action.payload;
       });
   },
 });
