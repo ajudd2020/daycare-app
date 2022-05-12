@@ -13,49 +13,21 @@ import isEqual from "lodash/isEqual";
  *    This is the id of the about page
  */
 const usePageData = (pageType, identifier1, identifier2 = undefined) => {
-  const dispatch = useDispatch();
-
   const contentData = useSelector(
     (state) => get(state, ["initialLoadData", "content", pageType], []),
     isEqual
   );
-  console.log("CONTENT DATA", contentData);
-
-  // const contentData = useSelector((state) => state.initialLoadData.content);
-
-  // console.log("content data", contentData);
-  const handleAboutPath = () => {
-    if (contentData.length === 0) {
-      return;
-    }
-    let content = contentData.filter(
-      (aboutObj) => aboutObj.pageCategory === identifier1
-    );
-
-    if (identifier2 !== undefined) {
-      content = content.filter(
-        (contentObj) => contentObj.pageName === identifier2
-      );
-    }
-
-    console.log("CONTENT", content);
-
-    // if (identifier1 === "home") {
-    //   const homeContent = contentData.filter(
-    //     (aboutObj) => aboutObj.pageCategory === "home"
-    //   );
-    //   return homeContent;
-    // }
-    return "about home";
-  };
-
-  console.log("Page Type", pageType, "id1", identifier1, "id2", identifier2);
-  switch (pageType) {
-    case "about":
-      handleAboutPath();
-      break;
-    default:
-      handleAboutPath();
+  if (contentData.length === 0) {
+    return;
   }
+  let content = contentData.filter(
+    (aboutObj) => aboutObj.pageCategory === identifier1
+  );
+  if (identifier2 !== undefined) {
+    content = content.filter(
+      (contentObj) => contentObj.pageName === identifier2
+    );
+  }
+  return content;
 };
 export default usePageData;
