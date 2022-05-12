@@ -4,7 +4,7 @@ import cloneDeep from "lodash/cloneDeep";
 import { useSelector } from "react-redux";
 
 const initialState = {
-  generalPages: [],
+  about: [],
   staff: [],
   classes: [],
   dimensions: {
@@ -64,7 +64,7 @@ export const displaySlice = createSlice({
       })
       .addCase(getGeneralPagesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.generalPages = action.payload;
+        state.about = action.payload;
       })
       .addCase(getClassesThunk.pending, (state) => {
         state.status = "loading";

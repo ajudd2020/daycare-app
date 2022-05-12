@@ -13,21 +13,21 @@ async function seed() {
   const generalPages = [
     {
       title: "Home Page",
-      type: "about",
+      pageType: "about",
       pageName: "home",
       pageCategory: "home",
       textContent: "This is the home page sample content",
     },
     {
       title: "Announcement 1 Page",
-      type: "about",
+      pageType: "about",
       pageName: "announcement1",
       pageCategory: "announcement",
       textContent: "This is the content for an ANNOUNCEMENT",
     },
     {
       title: "Newsletter 1 Page",
-      type: "about",
+      pageType: "about",
       pageName: "newsletter1",
       pageCategory: "newsletter",
       textContent: "This is the content for a NEWSLETTER",
