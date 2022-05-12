@@ -6,6 +6,8 @@ import isEqual from "lodash/isEqual";
 import get from "lodash/get";
 import Home from "../pages/Home";
 import usePageData from "../../../../utilities/usePageData";
+import Newsletters from "../pages/Newsletters";
+import Announcements from "../pages/Announcements";
 
 const AboutContainer = () => {
   console.log("ABOUT CONTAINER");
@@ -25,10 +27,10 @@ const AboutContainer = () => {
         return <Home />;
       case "announcements":
         console.log("announcements");
-        break;
-      case "newsletter":
-        console.log("newsletter");
-        break;
+        return <Announcements />;
+      case "newsletters":
+        console.log("newsletters");
+        return <Newsletters />;
       default:
         console.log("HOME");
     }
