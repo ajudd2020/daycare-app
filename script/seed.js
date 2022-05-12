@@ -10,10 +10,6 @@ async function seed() {
     User.create({ email: "murphy@email.com", password: "123" }),
   ]);
 
-  // const pages = await Promise.all([
-  //   Page.create({ title: "Home Page", type: "home" }),
-  // ]);
-
   const generalPages = [
     {
       title: "Home Page",

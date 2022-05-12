@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { setDimensions, setPageData } from "../features/main/mainSlice";
 
 const useInitialData = (mode) => {

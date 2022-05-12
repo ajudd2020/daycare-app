@@ -4,8 +4,9 @@ import cloneDeep from "lodash/cloneDeep";
 import { useSelector } from "react-redux";
 
 const initialState = {
-  pageData: [],
-  textBlocks: [],
+  generalPages: [],
+  staff: [],
+  classes: [],
   dimensions: {
     height: 0,
     width: 0,
@@ -14,18 +15,23 @@ const initialState = {
 
 // async thunks for doing all the async things.
 // These will use different reducers, which will check the status of the thunk itself. When running, it will be "pending". When it returns the payload, it will be "idle". This will trigger the reducer to update state.
-export const getPagesThunk = createAsyncThunk("api/pages", async () => {
-  const response = await axios.get("/api/pages");
-  return response.data;
-});
-
-export const getTextContentThunk = createAsyncThunk(
-  "api/textBlocks",
+export const getGeneralPagesThunk = createAsyncThunk(
+  "api/generalPages",
   async () => {
-    const response = await axios.get("/api/textBlocks");
+    const response = await axios.get("/api/generalPages");
     return response.data;
   }
 );
+
+export const getClassesThunk = createAsyncThunk("api/classes", async () => {
+  const response = await axios.get("/api/classes");
+  return response.data;
+});
+
+export const getStaffThunk = createAsyncThunk("api/staff", async () => {
+  const response = await axios.get("/api/staff");
+  return response.data;
+});
 
 // the slice aka the heart and soul of the store
 // this is where the reducer is created along with the actions that will update said reducer.
@@ -53,19 +59,26 @@ export const displaySlice = createSlice({
   // These are the fun extra reducers that handle our async thunks. They will decide what to do with the payload once the thunk is done.
   extraReducers: (builder) => {
     builder
-      .addCase(getPagesThunk.pending, (state) => {
+      .addCase(getGeneralPagesThunk.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(getPagesThunk.fulfilled, (state, action) => {
+      .addCase(getGeneralPagesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.pageData = action.payload;
+        state.generalPages = action.payload;
       })
-      .addCase(getTextContentThunk.pending, (state) => {
+      .addCase(getClassesThunk.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(getTextContentThunk.fulfilled, (state, action) => {
+      .addCase(getClassesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.textBlocks = action.payload;
+        state.classes = action.payload;
+      })
+      .addCase(getStaffThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getStaffThunk.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.staff = action.payload;
       });
   },
 });
@@ -76,9 +89,9 @@ export const { setDimensions } = displaySlice.actions;
 // thunks, just like the thunks we all know and love.
 // These do not return an action, they return a function. The function takes in dispatch so it can dispatch an action (or another thunk) to send along to the reducer
 export const setPageData = () => async (dispatch) => {
-  // const test = await dispatch(getPagesThunk());
-  // const test2 = await dispatch(getTextContentThunk());
-  console.log("PREPARING");
+  await dispatch(getGeneralPagesThunk());
+  await dispatch(getClassesThunk());
+  await dispatch(getStaffThunk());
 };
 
 // // The function below is called a selector and allows us to select a value from
