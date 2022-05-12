@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const { Page } = require("../db/models");
+const { GeneralPage } = require("../db/models");
 module.exports = router;
 
-// get /api/pages
+// get /api/generalPages
 router.get("/", async (req, res, next) => {
-  const pages = await Page.findAll();
+  const pages = await GeneralPage.findAll();
   res.send(pages);
 });
 
-// post /api/pages
+// post /api/generalPages
 router.post("/", async (req, res, next) => {
   try {
     // const newTask = await Task.create(req.body)

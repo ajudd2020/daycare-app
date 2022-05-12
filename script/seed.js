@@ -1,5 +1,5 @@
 const db = require("../server/db");
-const { User, Page, TextBlock } = require("../server/db/models");
+const { User, GeneralPage, Class, Staff } = require("../server/db/models");
 
 async function seed() {
   await db.sync({ force: true });
@@ -14,25 +14,82 @@ async function seed() {
   //   Page.create({ title: "Home Page", type: "home" }),
   // ]);
 
-  const pages = [
+  const generalPages = [
     {
       title: "Home Page",
-      type: "home",
+      type: "about",
+      pageName: "home",
+      pageCategory: "home",
+      textContent: "This is the home page sample content",
+    },
+    {
+      title: "Announcement 1 Page",
+      type: "about",
+      pageName: "announcement1",
+      pageCategory: "announcement",
+      textContent: "This is the content for an ANNOUNCEMENT",
+    },
+    {
+      title: "Newsletter 1 Page",
+      type: "about",
+      pageName: "newsletter1",
+      pageCategory: "newsletter",
+      textContent: "This is the content for a NEWSLETTER",
     },
   ];
 
-  const [homePage] = await Page.bulkCreate(pages);
+  const [homePage, announcement1, newsletter1] = await GeneralPage.bulkCreate(
+    generalPages
+  );
 
-  const textBlocks = await Promise.all([
-    TextBlock.create({
-      content: "this is the text block content in the seed file.",
-      pageId: homePage.id,
+  const classes = [
+    {
+      title: "Toddlers",
+      pageType: "classes",
+      className: "toddlers",
+      classSummary:
+        "Class for children 2-3 years old. sample for TODDLERS page.",
+      classSchedule: "SAMPLE schedule FOR TODDLER PAGE",
+    },
+    {
+      title: "Infants",
+      pageType: "classes",
+      className: "infants",
+      classSummary: "Class for children 1 year old. sample for INFANTS page.",
+      classSchedule: "SAMPLE schedule FOR INFANTS PAGE",
+    },
+  ];
+
+  const [toddlers, infants] = await Class.bulkCreate(classes);
+
+  const staff = await Promise.all([
+    Staff.create({
+      title: "Ms Debbie",
+      pageType: "staff",
+      staffName: "msDebbie",
+      staffRole: "admin",
+      staffBio: "This is a sample bio for MS DEBBIE",
     }),
-    TextBlock.create({
-      content: "This is another textblock for the home page",
-      pageId: homePage.id,
+    Staff.create({
+      title: "Ms Erin",
+      pageType: "staff",
+      staffName: "msErin",
+      staffRole: "teacher",
+      staffBio: "This is a sample bio for MS ERIN",
+      classId: infants.id,
     }),
   ]);
+
+  // const textBlocks = await Promise.all([
+  //   TextBlock.create({
+  //     content: "this is the text block content in the seed file.",
+  //     pageId: homePage.id,
+  //   }),
+  //   TextBlock.create({
+  //     content: "This is another textblock for the home page",
+  //     pageId: homePage.id,
+  //   }),
+  // ]);
 
   // const textBlocks = [
   //   {
@@ -44,8 +101,9 @@ async function seed() {
   // const []
 
   console.log(`seeded ${users.length} users`);
-  console.log(`seeded ${pages.length} pages`);
-  console.log(`seeded ${textBlocks.length} textBlocks`);
+  console.log(`seeded ${generalPages.length} general pages`);
+  console.log(`seeded ${classes.length} classes`);
+  console.log(`seeded ${staff.length} staff`);
   console.log(`seeded successfully`);
 }
 

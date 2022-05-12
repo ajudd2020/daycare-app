@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import isEqual from "lodash/isEqual";
 import get from "lodash/get";
-import Home from "../../pages/Home";
+import Home from "../pages/Home";
 
 const AboutContainer = () => {
   const dispatch = useDispatch();
   const pathData = useSelector(
-    (state) => get(state, ["main", "path"], {}),
+    (state) => get(state, ["display", "path"], {}),
     isEqual
   );
 

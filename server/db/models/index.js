@@ -1,6 +1,11 @@
 const User = require("./user");
-const Page = require("./page");
-const TextBlock = require("./textBlock");
+const GeneralPage = require("./generalPage");
+const Home = require("./home");
+const Announcement = require("./announcement");
+const Newsletter = require("./newsletter");
+const Staff = require("./staff");
+const Class = require("./class");
+// const TextBlock = require("./textBlock");
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -8,8 +13,15 @@ const TextBlock = require("./textBlock");
  *
  *    BlogPost.belongsTo(User)
  */
-TextBlock.belongsTo(Page);
-Page.hasMany(TextBlock);
+
+Class.hasMany(Staff);
+Staff.belongsTo(Class);
+
+// Stubbing out potential many-to-many relationship
+/**
+ * Class.belongsToMany(Staff, { through: StaffClasses, uniqueKey: "staff_class" });
+ * Staff.belongsToMany(Staff, { through: StaffClasses, uniqueKey: "staff_class" });
+ */
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -19,6 +31,10 @@ Page.hasMany(TextBlock);
  */
 module.exports = {
   User,
-  Page,
-  TextBlock,
+  GeneralPage,
+  Staff,
+  Class,
+  Home,
+  Announcement,
+  Newsletter,
 };

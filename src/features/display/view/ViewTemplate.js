@@ -1,5 +1,3 @@
-import { Checkbox, Typography } from "@mui/material";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,15 +11,15 @@ import AboutContainer from "./containers/AboutContainer";
 
 const ViewTemplate = () => {
   // This custom hook will set all the needed information on state
-  // i.e. mode (view), path(about or classes), window size
+  // i.e. mode (view) and path(about or classes)
   useDisplay("view");
   const pathData = useSelector(
-    (state) => get(state, ["main", "path"], {}),
+    (state) => get(state, ["display", "path"], {}),
     isEqual
   );
 
   const windowDimensions = useSelector(
-    (state) => state.main.dimensions,
+    (state) => get(state, ["initialLoadData", "dimensions"], {}),
     isEqual
   );
 

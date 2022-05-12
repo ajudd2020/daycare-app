@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import cloneDeep from "lodash/cloneDeep";
+import { useSelector } from "react-redux";
 
 const initialState = {
-  pages: [],
+  pageData: [],
   textBlocks: [],
   dimensions: {
     height: 0,
@@ -29,17 +30,14 @@ export const getTextContentThunk = createAsyncThunk(
 // the slice aka the heart and soul of the store
 // this is where the reducer is created along with the actions that will update said reducer.
 // This is probably the biggest difference from the old redux. The actions are now defined inside of the reducer, instead of needing to constantly type repeated code. It does away with all that fun UPPER CASE stuff I'm sure you love as much as I do.
-export const mainSlice = createSlice({
-  name: "main",
+export const displaySlice = createSlice({
+  name: "display",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     setDimensions: (state, action) => {
       state.dimensions.height = action.payload.height;
       state.dimensions.width = action.payload.width;
-    },
-    setPathObject: (state, action) => {
-      state.path = action.payload;
     },
     test: {
       reducer: (state, action) => {
@@ -60,10 +58,10 @@ export const mainSlice = createSlice({
       })
       .addCase(getPagesThunk.fulfilled, (state, action) => {
         state.status = "idle";
-        state.pages = action.payload;
+        state.pageData = action.payload;
       })
       .addCase(getTextContentThunk.pending, (state) => {
-        state.textBlocks = "loading";
+        state.status = "loading";
       })
       .addCase(getTextContentThunk.fulfilled, (state, action) => {
         state.status = "idle";
@@ -73,42 +71,14 @@ export const mainSlice = createSlice({
 });
 
 // export those actions!
-export const { loadPages, setDimensions, setPathObject } = mainSlice.actions;
+export const { setDimensions } = displaySlice.actions;
 
 // thunks, just like the thunks we all know and love.
 // These do not return an action, they return a function. The function takes in dispatch so it can dispatch an action (or another thunk) to send along to the reducer
-export const setPageData = (location, params, mode) => (dispatch) => {
-  const locationClone = cloneDeep(location);
-  const locationArr = locationClone.pathname.slice(1).split("/");
-  const pathObject = {};
-  switch (mode) {
-    case "view":
-      pathObject.mode = "view";
-      switch (locationArr[1]) {
-        case "about":
-          pathObject.type = locationArr[1];
-          pathObject.page = params.page ? params.page : "home";
-          break;
-        case "classes":
-          pathObject.type = locationArr[1];
-          pathObject.id = params.classId ? params.classId : "";
-          break;
-        case "staff":
-          pathObject.type = locationArr[1];
-          pathObject.id = params.staffId ? params.staffId : "";
-          break;
-        default:
-          pathObject.type = "about";
-          pathObject.page = "home";
-      }
-      break;
-    case "edit":
-      pathObject.mode = "edit";
-      break;
-    default:
-      pathObject.mode = "view";
-  }
-  dispatch(setPathObject(pathObject));
+export const setPageData = () => async (dispatch) => {
+  // const test = await dispatch(getPagesThunk());
+  // const test2 = await dispatch(getTextContentThunk());
+  console.log("PREPARING");
 };
 
 // // The function below is called a selector and allows us to select a value from
@@ -125,4 +95,4 @@ export const setPageData = (location, params, mode) => (dispatch) => {
 //   }
 // };
 
-export default mainSlice.reducer;
+export default displaySlice.reducer;

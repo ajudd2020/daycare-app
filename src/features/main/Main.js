@@ -2,18 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import ViewTemplate from "../display/view/ViewTemplate";
-import { getPagesThunk, getTextContentThunk } from "./mainSlice";
 import get from "lodash/get";
 import isEqual from "lodash/isEqual";
+import useInitialData from "../../utilities/useInitialData";
+import usePageData from "../../utilities/usePageData";
 
 function Main() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getPagesThunk());
-    dispatch(getTextContentThunk());
-  }, []);
-
+  // get all of the initial data we need on state
+  useInitialData();
+  usePageData();
   return (
     <div className="App">
       <Routes>
