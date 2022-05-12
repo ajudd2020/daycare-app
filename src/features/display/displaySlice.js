@@ -30,20 +30,24 @@ export const setPathData = (location, params, mode) => (dispatch) => {
       pathObject.mode = "view";
       switch (locationArr[1]) {
         case "about":
-          pathObject.type = locationArr[1];
-          pathObject.page = params.page ? params.page : "home";
+          pathObject.pageType = locationArr[1];
+          pathObject.pageCategory = params.pageCategory
+            ? params.pageCategory
+            : undefined;
+          pathObject.pageName = params.pageName ? params.pageName : undefined;
           break;
         case "classes":
-          pathObject.type = locationArr[1];
+          pathObject.pageType = locationArr[1];
           pathObject.id = params.classId ? params.classId : "";
           break;
         case "staff":
-          pathObject.type = locationArr[1];
+          pathObject.pageType = locationArr[1];
           pathObject.id = params.staffId ? params.staffId : "";
           break;
         default:
-          pathObject.type = "about";
-          pathObject.page = "home";
+          pathObject.pageType = "about";
+          pathObject.pageName = "home";
+          pathObject.pageCategory = "home";
       }
       break;
     case "edit":

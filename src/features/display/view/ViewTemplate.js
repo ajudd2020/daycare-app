@@ -24,7 +24,7 @@ const ViewTemplate = () => {
   );
 
   const getInnerContainer = () => {
-    const pathType = get(pathData, "type", false);
+    const pathType = get(pathData, "pageType", false);
     if (pathType) {
       switch (pathType) {
         case "about":

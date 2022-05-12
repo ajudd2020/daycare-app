@@ -22,7 +22,8 @@ function Main() {
         <Route path="/view" element={<ViewTemplate />}>
           {/* General Pages */}
           <Route path="about" element={<ViewTemplate />}>
-            <Route path=":page" element={<ViewTemplate />} />
+            <Route path=":pageCategory" element={<ViewTemplate />} />
+            <Route path=":pageCategory/:pageName" element={<ViewTemplate />} />
           </Route>
           {/* Class Pages */}
           <Route path="classes" element={<ViewTemplate />}>
