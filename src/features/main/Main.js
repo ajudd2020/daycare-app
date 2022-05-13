@@ -6,6 +6,7 @@ import get from "lodash/get";
 import isEqual from "lodash/isEqual";
 import useInitialData from "../../utilities/useInitialData";
 import usePageData from "../../utilities/usePageData";
+import EditTemplate from "../display/edit/EditTemplate";
 
 function Main() {
   // get all of the initial data we need on state
@@ -34,6 +35,7 @@ function Main() {
             <Route path=":staffId" element={<ViewTemplate />} />
           </Route>
         </Route>
+        <Route path="/edit" element={<EditTemplate />}></Route>
       </Routes>
     </div>
   );

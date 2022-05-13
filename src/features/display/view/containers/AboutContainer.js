@@ -27,7 +27,7 @@ const AboutContainer = () => {
   const getInnerContainer = () => {
     switch (pageCategory) {
       case "home":
-        return <Home />;
+        return <Home content={aboutContent} />;
       case "announcements":
         console.log("announcements");
         return <Announcements />;

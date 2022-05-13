@@ -12,7 +12,7 @@ const Home = db.define("home", {
     type: Sequelize.STRING,
   },
   textContent: {
-    type: Sequelize.TEXT,
+    type: Sequelize.ARRAY(Sequelize.STRING),
     allowNull: false,
   },
   imageContent: {

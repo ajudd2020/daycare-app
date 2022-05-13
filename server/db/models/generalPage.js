@@ -28,7 +28,7 @@ const GeneralPage = db.define("generalPage", {
     allowNull: false,
   },
   textContent: {
-    type: Sequelize.TEXT,
+    type: Sequelize.ARRAY(Sequelize.TEXT),
     allowNull: false,
   },
   imageContent: {

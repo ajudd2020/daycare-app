@@ -17,6 +17,7 @@ const NavBar = () => {
         backgroundColor: "primary.dark",
         display: "flex",
         padding: 4,
+        justifyContent: "space-between",
       }}
     >
       {/* <Link to="/test" style={{ textDecoration: "none" }}>
@@ -24,11 +25,25 @@ const NavBar = () => {
           <NavBarText>Test</NavBarText>
         </NavBarItem>
       </Link> */}
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <NavBarItem>
-          <NavBarText>Home</NavBarText>
-        </NavBarItem>
-      </Link>
+      <Box>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <NavBarItem>
+            <NavBarText>Children's Country Club Too</NavBarText>
+          </NavBarItem>
+        </Link>
+      </Box>
+      <Box display="flex">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <NavBarItem>
+            <NavBarText>TEST</NavBarText>
+          </NavBarItem>
+        </Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <NavBarItem>
+            <NavBarText>TEST</NavBarText>
+          </NavBarItem>
+        </Link>
+      </Box>
     </Box>
   );
 };

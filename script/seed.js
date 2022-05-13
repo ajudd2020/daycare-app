@@ -16,21 +16,24 @@ async function seed() {
       pageType: "about",
       pageName: "home",
       pageCategory: "home",
-      textContent: "This is the home page sample content",
+      textContent: [
+        "This is the home page sample content.",
+        "This is a second paragraph for the home page",
+      ],
     },
     {
       title: "Announcement 1 Page",
       pageType: "about",
       pageName: "announcement1",
       pageCategory: "announcements",
-      textContent: "This is the content for an ANNOUNCEMENT",
+      textContent: ["This is the content for an ANNOUNCEMENT"],
     },
     {
       title: "Newsletter 1 Page",
       pageType: "about",
       pageName: "newsletter1",
       pageCategory: "newsletters",
-      textContent: "This is the content for a NEWSLETTER",
+      textContent: ["This is the content for a NEWSLETTER"],
     },
   ];
 
