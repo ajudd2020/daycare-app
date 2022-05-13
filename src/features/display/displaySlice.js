@@ -22,6 +22,7 @@ export const displaySlice = createSlice({
 export const { setPathObject } = displaySlice.actions;
 
 export const setPathData = (location, params, mode) => (dispatch) => {
+  console.log("MODE", mode);
   const locationClone = cloneDeep(location);
   const locationArr = locationClone.pathname.slice(1).split("/");
   const pathObject = {};
@@ -56,6 +57,7 @@ export const setPathData = (location, params, mode) => (dispatch) => {
     default:
       pathObject.mode = "view";
   }
+  console.log("PATH OBJ", pathObject);
   dispatch(setPathObject(pathObject));
 };
 

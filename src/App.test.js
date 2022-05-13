@@ -14,5 +14,6 @@ test("renders learn react link", () => {
     </Provider>
   );
 
+  // @todo: Add in the store for testing to check that things are being saved!
   expect(getByText(/home page/i)).toBeInTheDocument();
 });
