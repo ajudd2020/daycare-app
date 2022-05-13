@@ -17,6 +17,7 @@ export const getGeneralPagesThunk = createAsyncThunk(
   "api/generalPages",
   async () => {
     const response = await axios.get("/api/generalPages");
+    console.log("RESP", response);
     return response.data;
   }
 );
