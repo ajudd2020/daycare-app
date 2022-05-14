@@ -1,8 +1,5 @@
 const User = require("./user");
 const GeneralPage = require("./generalPage");
-const Home = require("./home");
-const Announcement = require("./announcement");
-const Newsletter = require("./newsletter");
 const Staff = require("./staff");
 const Class = require("./class");
 // const TextBlock = require("./textBlock");
@@ -34,7 +31,4 @@ module.exports = {
   GeneralPage,
   Staff,
   Class,
-  Home,
-  Announcement,
-  Newsletter,
 };
