@@ -17,8 +17,8 @@ async function seed() {
       pageName: "home",
       pageCategory: "home",
       textContent: [
-        "This is the home page sample content.",
-        "This is a second paragraph for the home page",
+        "Welcome to the The Children's Country Club Too Preschool and Daycare. The CCC has been providing high quality child care in the community since 1978.  Thank you for inquiring about our center. We are excited to share all the wonderful features our center has to offer.  We invite you to take an interactive tour of the Children's Country Club Too school.  We at Children's Country Club too! are excited about our ADVENTURES IN LEARNING!  We hope the information will be helpful in furthering your knowledge of some of what we have to offer.",
+        "Please call us at your convenience to come visit and view the difference. We look forward to hearing from you!",
       ],
     },
     {

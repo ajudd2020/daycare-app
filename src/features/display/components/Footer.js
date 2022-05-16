@@ -12,19 +12,24 @@ const Footer = () => {
 
   return (
     <Box
-      height="5%"
+      display="flex"
+      justifyContent="center"
+      height="10%"
       sx={{
         backgroundColor: "primary.dark",
-        display: "flex",
-        padding: 4,
+        p: 1,
       }}
     >
+      <Box>
+        <Typography>​20336 Frankfort Square Road</Typography>
+        <Typography>Frankfort IL, 60423</Typography>
+        <Typography>815-464-9820</Typography>
+      </Box>
       {/* <Link to="/test" style={{ textDecoration: "none" }}>
         <NavBarItem>
           <NavBarText>Test</NavBarText>
         </NavBarItem>
       </Link> */}
-      <Typography variant={"darkColor"}>This is a sample footer</Typography>
     </Box>
   );
 };

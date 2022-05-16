@@ -39,12 +39,7 @@ const AboutContainer = () => {
     }
   };
 
-  return (
-    <Box>
-      <Typography> This is the about container</Typography>
-      {getInnerContainer()}
-    </Box>
-  );
+  return <Box height="100%">{getInnerContainer()}</Box>;
 };
 
 export default AboutContainer;
