@@ -21,9 +21,9 @@ const Footer = () => {
       }}
     >
       <Box>
-        <Typography>​20336 Frankfort Square Road</Typography>
+        <Typography>99999 Frankfort Square Road</Typography>
         <Typography>Frankfort IL, 60423</Typography>
-        <Typography>815-464-9820</Typography>
+        <Typography>815-444-4444</Typography>
       </Box>
       {/* <Link to="/test" style={{ textDecoration: "none" }}>
         <NavBarItem>

@@ -17,8 +17,8 @@ async function seed() {
       pageName: "home",
       pageCategory: "home",
       textContent: [
-        "Welcome to the The Children's Country Club Too Preschool and Daycare. The CCC has been providing high quality child care in the community since 1978.  Thank you for inquiring about our center. We are excited to share all the wonderful features our center has to offer.  We invite you to take an interactive tour of the Children's Country Club Too school.  We at Children's Country Club too! are excited about our ADVENTURES IN LEARNING!  We hope the information will be helpful in furthering your knowledge of some of what we have to offer.",
-        "Please call us at your convenience to come visit and view the difference. We look forward to hearing from you!",
+        "vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis.",
+        "Please call with any questions! We look forward to hearing from you!",
       ],
     },
     {
