@@ -33,25 +33,15 @@ const Home = ({ content }) => {
       ""
     );
   };
-
-  const renderInnerContent = (content) => {
-    console.log("CONTENT MAP", content.textContent);
-    return content.textContent
-      ? content.textContent.map((text) => {
-          console.log("IN TERN", text);
-          return <Typography variant={"complementary"}>{text}</Typography>;
-        })
-      : "";
-  };
   // console.log("PATH DATA", pathData);
 
   return (
     <Box
       display="flex"
       flexDirection="column"
-      justifyContent="space-around"
       alignItems="center"
       height=" 100%"
+      // overflow="hidden"
     >
       <Box
         display="flex"
@@ -66,14 +56,17 @@ const Home = ({ content }) => {
           sx={{
             height: 233,
             width: 350,
-            m: 2,
+            p: 2,
           }}
           alt="CCToo Sign"
           src="/assets/sign.png"
         />
-        <Box sx={{ m: 2 }}>
+        <Box sx={{ p: 2 }}>
           {content ? content.map((content) => renderParagraph(content, 0)) : ""}
         </Box>
+      </Box>
+      <Box>
+        <Typography>Stay Up To Date With CCCToo!</Typography>
       </Box>
       <Box>
         <Typography>
@@ -85,6 +78,7 @@ const Home = ({ content }) => {
           This will be the placeholder for a link to the most recent newsletter
         </Typography>
       </Box>
+
       <Box>
         {content ? content.map((content) => renderParagraph(content, 1)) : ""}
       </Box>

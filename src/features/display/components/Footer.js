@@ -14,7 +14,9 @@ const Footer = () => {
     <Box
       display="flex"
       justifyContent="center"
-      height="10%"
+      position="fixed"
+      bottom={0}
+      width="100%"
       sx={{
         backgroundColor: "primary.dark",
         p: 1,

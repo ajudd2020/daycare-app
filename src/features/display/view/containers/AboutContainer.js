@@ -39,7 +39,11 @@ const AboutContainer = () => {
     }
   };
 
-  return <Box height="100%">{getInnerContainer()}</Box>;
+  return (
+    <Box height="80%" width="100%">
+      {getInnerContainer()}
+    </Box>
+  );
 };
 
 export default AboutContainer;

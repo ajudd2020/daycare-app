@@ -12,11 +12,10 @@ const NavBar = () => {
 
   return (
     <Box
-      height="5%"
       sx={{
         backgroundColor: "primary.dark",
         display: "flex",
-        padding: 4,
+        p: 4,
         justifyContent: "space-between",
       }}
     >
