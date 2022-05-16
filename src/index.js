@@ -14,15 +14,17 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <ThemeProvider theme={daycareTheme}>
-          <Main />
-        </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
-  </React.StrictMode>
+  //@Todo: Had to remove StictMode due to problems with Quill.js
+  // Look for new library or keep checking for updates
+  // <React.StrictMode>
+  <BrowserRouter>
+    <Provider store={store}>
+      <ThemeProvider theme={daycareTheme}>
+        <Main />
+      </ThemeProvider>
+    </Provider>
+  </BrowserRouter>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

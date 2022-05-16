@@ -5,6 +5,8 @@ import get from "lodash/get";
 import isEqual from "lodash/isEqual";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// const parse = require('html-react-parser');
+import parse from "html-react-parser";
 // import sign from "../../../../../public/sign.png";
 
 /**
@@ -28,12 +30,11 @@ const Home = ({ content }) => {
    */
   const renderParagraph = (content, i) => {
     return content.textContent ? (
-      <Typography>{content.textContent[i]}</Typography>
+      <div>{parse(content.textContent[i])}</div>
     ) : (
       ""
     );
   };
-  // console.log("PATH DATA", pathData);
 
   return (
     <Box

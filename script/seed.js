@@ -17,23 +17,38 @@ async function seed() {
       pageName: "home",
       pageCategory: "home",
       textContent: [
-        "vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis.",
-        "Please call with any questions! We look forward to hearing from you!",
+        "<p>vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed felis eget velit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at volutpat diam ut venenatis tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis.</p>",
+        "<p>Please call with any questions! We look forward to hearing from you!</p>",
       ],
     },
     {
-      title: "Announcement 1 Page",
+      title: "Register Today for Summer Camp!",
       pageType: "about",
-      pageName: "announcement1",
+      pageName: "summerCampRegistration",
       pageCategory: "announcements",
-      textContent: ["This is the content for an ANNOUNCEMENT"],
+      textContent: [
+        "<p>Register today for summer camp! Camp will run from 6/6 through 8/12. </p><p>Registration fee is $30.</p><p>Spots are filling up fast! Call or come in to reserve yours today.</p>",
+        "<p>See link below for calendar and events</p>",
+      ],
     },
     {
-      title: "Newsletter 1 Page",
+      title: "Covid-19 Update",
       pageType: "about",
-      pageName: "newsletter1",
+      pageName: "covid19Update",
+      pageCategory: "announcements",
+      textContent: [
+        "<p>Due to updates in state regulations, parents, children, and staff are no longer required to wear a mask in the building. Anyone who choses to continue wearing a mask may. Please be respectful of other's decisions.</p>",
+      ],
+    },
+    {
+      title: "May Newsletter 2022",
+      pageType: "about",
+      pageName: "mayNewsletter2022",
       pageCategory: "newsletters",
-      textContent: ["This is the content for a NEWSLETTER"],
+      textContent: [
+        "<p>This is the test newsletter for MAY!</p><p>The events this month are: </p><ul><li>May 12 - Test Event</li><li>May 16 - Field Trip</li><li>May 30- Graduation party</li></ul><p><br></p><p>Make sure kids bring sunscreen for playing outside!</p>",
+        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut sem viverra aliquet eget sit. Purus semper eget duis at tellus. Egestas congue quisque egestas diam in arcu cursus. Nec ullamcorper sit amet risus nullam eget felis eget nunc. Netus et malesuada fames ac turpis egestas sed tempus. Turpis massa tincidunt dui ut ornare lectus. Tortor at risus viverra adipiscing. Fermentum et sollicitudin ac orci. Semper eget duis at tellus at urna condimentum. Purus faucibus ornare suspendisse sed nisi. Viverra orci sagittis eu volutpat odio facilisis. Cursus metus aliquam eleifend mi in nulla posuere.</p>",
+      ],
     },
   ];
 
