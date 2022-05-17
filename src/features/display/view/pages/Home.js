@@ -10,8 +10,7 @@ import parse from "html-react-parser";
 // import sign from "../../../../../public/sign.png";
 
 /**
- * This page won't be dynamically displayed like the newsletters or announcements.
- * That is because this page will have a very specific layout that is unique to it and not needed in the other components
+ * The home page
  *
  * @param {*} content An array containing the content to be displayed on this page
  * @returns page content
