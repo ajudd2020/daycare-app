@@ -1,5 +1,12 @@
 const db = require("../server/db");
-const { User, GeneralPage, Class, Staff } = require("../server/db/models");
+const {
+  User,
+  GeneralPage,
+  Class,
+  Staff,
+  Announcement,
+  Newsletter,
+} = require("../server/db/models");
 
 async function seed() {
   await db.sync({ force: true });
@@ -21,6 +28,11 @@ async function seed() {
         "<p>Please call with any questions! We look forward to hearing from you!</p>",
       ],
     },
+  ];
+
+  const [homePage] = await GeneralPage.bulkCreate(generalPages);
+
+  const announcements = [
     {
       title: "Register Today for Summer Camp!",
       pageType: "about",
@@ -40,6 +52,12 @@ async function seed() {
         "<p>Due to updates in state regulations, parents, children, and staff are no longer required to wear a mask in the building. Anyone who choses to continue wearing a mask may. Please be respectful of other's decisions.</p>",
       ],
     },
+  ];
+  const [summerCampRegistration, covid19Update] = await Announcement.bulkCreate(
+    announcements
+  );
+
+  const newsletters = [
     {
       title: "May Newsletter 2022",
       pageType: "about",
@@ -52,9 +70,7 @@ async function seed() {
     },
   ];
 
-  const [homePage, announcement1, newsletter1] = await GeneralPage.bulkCreate(
-    generalPages
-  );
+  const [mayNewsletter2022] = await Newsletter.bulkCreate(newsletters);
 
   const classes = [
     {

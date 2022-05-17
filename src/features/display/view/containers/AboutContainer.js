@@ -40,7 +40,7 @@ const AboutContainer = () => {
   };
 
   return (
-    <Box height="80%" width="100%">
+    <Box height="100%" width="100%">
       {getInnerContainer()}
     </Box>
   );

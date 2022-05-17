@@ -23,8 +23,13 @@ function Main() {
         <Route path="/view" element={<ViewTemplate />}>
           {/* General Pages */}
           <Route path="about" element={<ViewTemplate />}>
-            <Route path=":pageCategory" element={<ViewTemplate />} />
-            <Route path=":pageCategory/:pageName" element={<ViewTemplate />} />
+            <Route path=":pageName" element={<ViewTemplate />} />
+          </Route>
+          <Route path="newsletters" element={<ViewTemplate />}>
+            <Route path=":newsletterId" element={<ViewTemplate />} />
+          </Route>
+          <Route path="announcements" element={<ViewTemplate />}>
+            <Route path=":announcementId" element={<ViewTemplate />} />
           </Route>
           {/* Class Pages */}
           <Route path="classes" element={<ViewTemplate />}>

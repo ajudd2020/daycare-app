@@ -40,7 +40,7 @@ export const NavBarItem = styled(Box)(() => ({
     borderBottom: `2px solid ${daycareTheme.palette.secondary.dark}`,
   },
   maxHeight: "20px",
-  margin: 5,
+  marginLeft: 10,
 }));
 
 export const NavBarText = styled(Typography)(() => ({

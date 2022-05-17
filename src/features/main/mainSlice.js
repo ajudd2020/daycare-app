@@ -22,6 +22,24 @@ export const getGeneralPagesThunk = createAsyncThunk(
   }
 );
 
+export const getAnnouncementsThunk = createAsyncThunk(
+  "api/announcements",
+  async () => {
+    const response = await axios.get("/api/announcements");
+    console.log("RESP", response);
+    return response.data;
+  }
+);
+
+export const getNewslettersThunk = createAsyncThunk(
+  "api/newsletters",
+  async () => {
+    const response = await axios.get("/api/newsletters");
+    console.log("RESP", response);
+    return response.data;
+  }
+);
+
 export const getClassesThunk = createAsyncThunk("api/classes", async () => {
   const response = await axios.get("/api/classes");
   return response.data;
@@ -78,6 +96,20 @@ export const displaySlice = createSlice({
       .addCase(getStaffThunk.fulfilled, (state, action) => {
         state.status = "idle";
         state.content.staff = action.payload;
+      })
+      .addCase(getAnnouncementsThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getAnnouncementsThunk.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.content.announcements = action.payload;
+      })
+      .addCase(getNewslettersThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(getNewslettersThunk.fulfilled, (state, action) => {
+        state.status = "idle";
+        state.content.newsletters = action.payload;
       });
   },
 });
@@ -89,6 +121,8 @@ export const { setDimensions } = displaySlice.actions;
 // These do not return an action, they return a function. The function takes in dispatch so it can dispatch an action (or another thunk) to send along to the reducer
 export const setPageData = () => async (dispatch) => {
   await dispatch(getGeneralPagesThunk());
+  await dispatch(getAnnouncementsThunk());
+  await dispatch(getNewslettersThunk());
   await dispatch(getClassesThunk());
   await dispatch(getStaffThunk());
 };

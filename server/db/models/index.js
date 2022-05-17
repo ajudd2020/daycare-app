@@ -1,5 +1,7 @@
 const User = require("./user");
 const GeneralPage = require("./generalPage");
+const Announcement = require("./announcement");
+const Newsletter = require("./newsletter");
 const Staff = require("./staff");
 const Class = require("./class");
 // const TextBlock = require("./textBlock");
@@ -22,6 +24,8 @@ Staff.belongsTo(Class);
 module.exports = {
   User,
   GeneralPage,
+  Announcement,
+  Newsletter,
   Staff,
   Class,
 };
