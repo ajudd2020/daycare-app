@@ -11,13 +11,9 @@ const Staff = db.define("staff", {
   pageType: {
     type: Sequelize.STRING,
   },
-  staffName: {
+  pageId: {
     type: Sequelize.STRING,
     unique: true,
-    allowNull: false,
-  },
-  staffRole: {
-    type: Sequelize.ENUM("admin", "teacher"),
     allowNull: false,
   },
   staffBio: {

@@ -11,7 +11,7 @@ const useDisplay = (mode) => {
 
   // set the path object on state
   useEffect(() => {
-    dispatch(setPathData(location, params, mode));
+    dispatch(setPathData(params, mode));
   }, [params]);
 };
 

@@ -19,11 +19,7 @@ const Announcement = db.define("announcement", {
   pageType: {
     type: Sequelize.STRING,
   },
-  pageName: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  pageCategory: {
+  pageId: {
     type: Sequelize.STRING,
     allowNull: false,
   },

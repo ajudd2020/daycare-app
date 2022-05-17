@@ -21,24 +21,29 @@ function Main() {
         {/* I am chosing not to structure the routes that way, though, because they are easier to read this way. */}
         {/* View Mode */}
         <Route path="/view" element={<ViewTemplate />}>
+          <Route path=":pageType" element={<ViewTemplate />}>
+            <Route path=":id" element={<ViewTemplate />} />
+          </Route>
           {/* General Pages */}
-          <Route path="about" element={<ViewTemplate />}>
+          {/* <Route path="about" element={<ViewTemplate />}>
             <Route path=":pageName" element={<ViewTemplate />} />
-          </Route>
-          <Route path="newsletters" element={<ViewTemplate />}>
+          </Route> */}
+          {/* Newsletters */}
+          {/* <Route path="newsletters" element={<ViewTemplate />}>
             <Route path=":newsletterId" element={<ViewTemplate />} />
-          </Route>
-          <Route path="announcements" element={<ViewTemplate />}>
+          </Route> */}
+          {/* Announcements */}
+          {/* <Route path="announcements" element={<ViewTemplate />}>
             <Route path=":announcementId" element={<ViewTemplate />} />
-          </Route>
+          </Route> */}
           {/* Class Pages */}
-          <Route path="classes" element={<ViewTemplate />}>
+          {/* <Route path="classes" element={<ViewTemplate />}>
             <Route path=":classId" element={<ViewTemplate />} />
-          </Route>
+          </Route> */}
           {/* Staff Pages */}
-          <Route path="staff" element={<ViewTemplate />}>
+          {/* <Route path="staff" element={<ViewTemplate />}>
             <Route path=":staffId" element={<ViewTemplate />} />
-          </Route>
+          </Route> */}
         </Route>
         <Route path="/edit" element={<EditTemplate />}></Route>
       </Routes>

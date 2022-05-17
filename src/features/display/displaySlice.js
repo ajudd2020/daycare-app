@@ -21,33 +21,28 @@ export const displaySlice = createSlice({
 // export those actions!
 export const { setPathObject } = displaySlice.actions;
 
-export const setPathData = (location, params, mode) => (dispatch) => {
-  const locationClone = cloneDeep(location);
-  const locationArr = locationClone.pathname.slice(1).split("/");
+export const setPathData = (params, mode) => (dispatch) => {
+  console.log("PARAMS", params);
   const pathObject = {};
   switch (mode) {
     case "view":
       pathObject.mode = "view";
-      switch (locationArr[1]) {
+      switch (params.pageType) {
         case "about":
-          pathObject.pageType = locationArr[1];
-          pathObject.pageCategory = params.pageCategory
-            ? params.pageCategory
-            : "home";
-          pathObject.pageName = params.pageName ? params.pageName : undefined;
+          pathObject.pageType = params.pageType;
+          pathObject.pageId = params.id ? params.id : undefined;
           break;
         case "classes":
-          pathObject.pageType = locationArr[1];
-          pathObject.id = params.classId ? params.classId : "all";
+          pathObject.pageType = params.pageType;
+          pathObject.pageId = params.classId ? params.classId : "all";
           break;
         case "staff":
-          pathObject.pageType = locationArr[1];
-          pathObject.id = params.staffId ? params.staffId : "all";
+          pathObject.pageType = params.pageType;
+          pathObject.pageId = params.staffId ? params.staffId : "all";
           break;
         default:
           pathObject.pageType = "about";
-          pathObject.pageName = "home";
-          pathObject.pageCategory = "home";
+          pathObject.pageId = "home";
       }
       break;
     case "edit":

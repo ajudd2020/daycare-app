@@ -5,13 +5,11 @@ import isEqual from "lodash/isEqual";
 // to derive what data we need about the current page, we need, in order:
 /**
  *
- * @param {string} pageType type of page - about classes staff
- * @param {string} identifier1 name of the page - home announcements newsletter toddlers msDebbie
- *    This is the id of the class or staff and the type of about page
- * @param {string} identifier2 for about pages only - announcement1 newsletter1
- *    This is the id of the about page
+ * @param {string} pageType type of page - about classes staff announcements newsletters
+ * @param {string} pageId pageId - unique idenifier for the page
  */
-const usePageData = (pageType, identifier1, identifier2 = undefined) => {
+const usePageData = (pageType, pageId) => {
+  console.log("PAGE TYPE", pageType, "PAGE ID", pageId);
   const contentData = useSelector(
     (state) => get(state, ["initialLoadData", "content", pageType], []),
     isEqual
@@ -20,13 +18,8 @@ const usePageData = (pageType, identifier1, identifier2 = undefined) => {
     return;
   }
   let content = contentData.filter(
-    (aboutObj) => aboutObj.pageCategory === identifier1
+    (contentObj) => contentObj.pageId === pageId
   );
-  if (identifier2 !== undefined) {
-    content = content.filter(
-      (contentObj) => contentObj.pageName === identifier2
-    );
-  }
   return content;
 };
 export default usePageData;

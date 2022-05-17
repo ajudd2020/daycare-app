@@ -32,11 +32,7 @@ export const daycareTheme = createTheme({
 });
 
 export const NavBarItem = styled(Box)(() => ({
-  // backgroundColor: daycareTheme.palette.primary.light,
-  // color: daycareTheme.typography.darkColor,
   "&:hover": {
-    // backgroundColor: daycareTheme.palette.secondary.dark,
-    // color: daycareTheme.typography.lightColor,
     borderBottom: `2px solid ${daycareTheme.palette.secondary.dark}`,
   },
   maxHeight: "20px",
@@ -47,7 +43,6 @@ export const NavBarText = styled(Typography)(() => ({
   color: daycareTheme.typography.lightColor.color,
   fontWeight: "bold",
   "&:hover": {
-    // color: daycareTheme.typography.lightColor.color,
     cursor: "pointer",
   },
 }));

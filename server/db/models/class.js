@@ -11,7 +11,7 @@ const Class = db.define("class", {
   pageType: {
     type: Sequelize.STRING,
   },
-  className: {
+  pageId: {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
