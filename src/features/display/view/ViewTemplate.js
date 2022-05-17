@@ -7,6 +7,7 @@ import useDisplay from "../../../utilities/useDisplay";
 import Footer from "../components/Footer";
 import get from "lodash/get";
 import AboutContainer from "./containers/AboutContainer";
+import ClassesCountainer from "./containers/ClassesContainer";
 // import { testThunk } from "./testSlice";
 
 const ViewTemplate = () => {
@@ -30,9 +31,14 @@ const ViewTemplate = () => {
         case "about":
           console.log("ABOUT");
           return <AboutContainer />;
-        case "classes":
-          console.log("CLASSES");
+        case "announcements":
+          console.log("ANNOUNCEMENTS");
           break;
+        case "newsletters":
+          console.log("NEWSLETTERS");
+          break;
+        case "classes":
+          return <ClassesCountainer />;
         case "staff":
           console.log("STAFF");
           break;

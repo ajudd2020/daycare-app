@@ -30,7 +30,7 @@ const Home = ({ content }) => {
    */
   const renderParagraph = (content, i) => {
     return content.textContent ? (
-      <div>{parse(content.textContent[i])}</div>
+      <div key={i}>{parse(content.textContent[i])}</div>
     ) : (
       ""
     );

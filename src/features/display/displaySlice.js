@@ -34,11 +34,11 @@ export const setPathData = (params, mode) => (dispatch) => {
           break;
         case "classes":
           pathObject.pageType = params.pageType;
-          pathObject.pageId = params.classId ? params.classId : "all";
+          pathObject.pageId = params.id ? params.id : "all";
           break;
         case "staff":
           pathObject.pageType = params.pageType;
-          pathObject.pageId = params.staffId ? params.staffId : "all";
+          pathObject.pageId = params.id ? params.id : "all";
           break;
         default:
           pathObject.pageType = "about";
