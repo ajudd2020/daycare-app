@@ -62,7 +62,7 @@ const Home = ({ content }) => {
           alt="CCToo Sign"
           src="/assets/sign.png"
         />
-        <Box sx={{ p: 2 }}>
+        <Box>
           {content ? content.map((content) => renderParagraph(content, 0)) : ""}
         </Box>
       </Box>

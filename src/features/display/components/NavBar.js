@@ -30,9 +30,9 @@ const NavBar = () => {
         </Link>
       </Box>
       <Box display="flex">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/view/classes" style={{ textDecoration: "none" }}>
           <NavBarItem>
-            <NavBarText>TEST</NavBarText>
+            <NavBarText>Classes</NavBarText>
           </NavBarItem>
         </Link>
         <Link to="/" style={{ textDecoration: "none" }}>

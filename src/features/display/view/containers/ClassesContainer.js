@@ -4,10 +4,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import isEqual from "lodash/isEqual";
 import get from "lodash/get";
-import Home from "../pages/Home";
 import usePageData from "../../../../utilities/usePageData";
-import Newsletters from "../pages/Newsletters";
-import Announcements from "../pages/Announcements";
 
 const ClassesCountainer = () => {
   console.log("ABOUT CONTAINER");
