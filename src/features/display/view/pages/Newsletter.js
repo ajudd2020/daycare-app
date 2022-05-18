@@ -10,26 +10,32 @@ const Newsletter = ({ content }) => {
   const renderParagraph = (content) => {
     return parse(content);
   };
-
-  const imageString = `/assets/${content[0].imageContent}`;
+  const imageLocation = get(content, [0, "imageContent"], "");
+  const imageString = `/assets/${imageLocation}`;
 
   return (
-    <Box display="flex" flexDirection="column" sx={{ m: 5 }}>
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <Box
-          component="img"
-          sx={{
-            height: 100,
-            width: 150,
-            p: 2,
-          }}
-          alt="CCToo Sign"
-          src={imageString}
-        />
-        <Typography variant={"h4"}>{content[0].title}</Typography>
-      </Box>
-      {renderParagraph(content[0].introText)}
-    </Box>
+    <>
+      {content ? (
+        <Box display="flex" flexDirection="column" sx={{ m: 5 }}>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Box
+              component="img"
+              sx={{
+                height: 100,
+                width: 150,
+                p: 2,
+              }}
+              alt="CCToo Sign"
+              src={imageString}
+            />
+            <Typography variant={"h4"}>{content[0].title}</Typography>
+          </Box>
+          {renderParagraph(content[0].introText)}
+        </Box>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 
