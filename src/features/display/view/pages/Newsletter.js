@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import isEqual from "lodash/isEqual";
 import get from "lodash/get";
 import parse from "html-react-parser";
+import { render } from "@testing-library/react";
 
 const Newsletter = ({ content }) => {
   const renderParagraph = (content) => {
@@ -16,7 +17,12 @@ const Newsletter = ({ content }) => {
   return (
     <>
       {content ? (
-        <Box display="flex" flexDirection="column" sx={{ m: 5 }}>
+        <Box
+          display="flex"
+          flexDirection="column"
+          width="75%"
+          alignItems="center"
+        >
           <Box display="flex" justifyContent="center" alignItems="center">
             <Box
               component="img"
@@ -31,6 +37,30 @@ const Newsletter = ({ content }) => {
             <Typography variant={"h4"}>{content[0].title}</Typography>
           </Box>
           {renderParagraph(content[0].introText)}
+          <Box
+            display="flex"
+            width="60%"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box
+              display="flex"
+              flexDirection="column"
+              width="45%"
+              sx={{ p: 1 }}
+            >
+              {renderParagraph(content[0].activities)}
+            </Box>
+            <Box
+              display="flex"
+              flexDirection="column"
+              width="45%"
+              sx={{ p: 1 }}
+            >
+              {renderParagraph(content[0].unitsForThisMonth)}
+              {renderParagraph(content[0].infoForSpecialDates)}
+            </Box>
+          </Box>
         </Box>
       ) : (
         ""

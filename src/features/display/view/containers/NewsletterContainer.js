@@ -8,7 +8,6 @@ import Newsletter from "../pages/Newsletter";
 import usePageData from "../../../../utilities/usePageData";
 
 const NewsletterContainer = () => {
-  const dispatch = useDispatch();
   const { mode, pageType, pageId } = useSelector(
     (state) => get(state, ["display", "path"], {}),
     isEqual
@@ -18,7 +17,7 @@ const NewsletterContainer = () => {
   console.log("content", newsletterContent);
 
   return (
-    <Box>
+    <Box display="flex" justifyContent="center">
       {pageId === "all" ? (
         <Typography variant={"complementary"}>
           This will be the newsletters page
