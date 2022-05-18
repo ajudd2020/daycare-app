@@ -7,33 +7,28 @@ import get from "lodash/get";
 import parse from "html-react-parser";
 
 const Newsletter = ({ content }) => {
-  const dispatch = useDispatch();
-  const pathData = useSelector(
-    (state) => get(state, ["display", "path"], {}),
-    isEqual
-  );
-
   const renderParagraph = (content) => {
     return parse(content);
   };
 
-  console.log("PATH", pathData);
   const imageString = `/assets/${content[0].imageContent}`;
 
   return (
-    <Box>
-      <Typography>{content.title}</Typography>
+    <Box display="flex" flexDirection="column" sx={{ m: 5 }}>
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <Box
+          component="img"
+          sx={{
+            height: 100,
+            width: 150,
+            p: 2,
+          }}
+          alt="CCToo Sign"
+          src={imageString}
+        />
+        <Typography variant={"h4"}>{content[0].title}</Typography>
+      </Box>
       {renderParagraph(content[0].introText)}
-      <Box
-        component="img"
-        sx={{
-          height: 233,
-          width: 350,
-          p: 2,
-        }}
-        alt="CCToo Sign"
-        src={imageString}
-      />
     </Box>
   );
 };
