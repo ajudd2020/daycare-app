@@ -32,6 +32,14 @@ export const setPathData = (params, mode) => (dispatch) => {
           pathObject.pageType = params.pageType;
           pathObject.pageId = params.id ? params.id : undefined;
           break;
+        case "announcements":
+          pathObject.pageType = params.pageType;
+          pathObject.pageId = params.id ? params.id : "all";
+          break;
+        case "newsletters":
+          pathObject.pageType = params.pageType;
+          pathObject.pageId = params.id ? params.id : "all";
+          break;
         case "classes":
           pathObject.pageType = params.pageType;
           pathObject.pageId = params.id ? params.id : "all";

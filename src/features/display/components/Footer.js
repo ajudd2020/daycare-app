@@ -1,11 +1,7 @@
-import { Checkbox, Typography } from "@mui/material";
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { NavBarItem, NavBarText } from "../../../styles";
-// import { testThunk } from "./testSlice";
+import { useDispatch } from "react-redux";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -16,7 +12,7 @@ const Footer = () => {
       justifyContent="center"
       // position="fixed"
       // bottom={0}
-      width="100%"
+      // width="100%"
       sx={{
         backgroundColor: "primary.dark",
         p: 1,

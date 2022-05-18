@@ -17,8 +17,6 @@ import parse from "html-react-parser";
  */
 
 const Home = ({ content }) => {
-  console.log("CONTENT", content);
-
   /**
    * This function will return the content for the page to display. Sending in the index will allow the user to
    * decide which paragraph to select.

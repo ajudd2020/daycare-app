@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import get from "lodash/get";
 import AboutContainer from "./containers/AboutContainer";
 import ClassesCountainer from "./containers/ClassesContainer";
+import NewsletterContainer from "./containers/NewsletterContainer";
 // import { testThunk } from "./testSlice";
 
 const ViewTemplate = () => {
@@ -36,7 +37,7 @@ const ViewTemplate = () => {
           break;
         case "newsletters":
           console.log("NEWSLETTERS");
-          break;
+          return <NewsletterContainer />;
         case "classes":
           return <ClassesCountainer />;
         case "staff":

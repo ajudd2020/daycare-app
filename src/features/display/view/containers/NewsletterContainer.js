@@ -4,36 +4,30 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import isEqual from "lodash/isEqual";
 import get from "lodash/get";
-import Home from "../pages/Home";
+import Newsletter from "../pages/Newsletter";
 import usePageData from "../../../../utilities/usePageData";
 
-const AboutContainer = () => {
-  console.log("ABOUT CONTAINER");
+const NewsletterContainer = () => {
   const dispatch = useDispatch();
   const { mode, pageType, pageId } = useSelector(
     (state) => get(state, ["display", "path"], {}),
     isEqual
   );
 
-  const aboutContent = usePageData(pageType, pageId);
-
-  const getInnerContainer = () => {
-    switch (pageId) {
-      case "home":
-        return <Home content={aboutContent} />;
-      case "aboutUs":
-        console.log("aboutUs");
-        break;
-      default:
-        console.log("HOME");
-    }
-  };
+  const newsletterContent = usePageData(pageType, pageId);
+  console.log("content", newsletterContent);
 
   return (
-    <Box height="100%" width="100%">
-      {getInnerContainer()}
+    <Box>
+      {pageId === "all" ? (
+        <Typography variant={"complementary"}>
+          This will be the newsletters page
+        </Typography>
+      ) : (
+        <Newsletter content={newsletterContent} />
+      )}
     </Box>
   );
 };
 
-export default AboutContainer;
+export default NewsletterContainer;
