@@ -23,9 +23,24 @@ const Newsletter = db.define("newsletter", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  textContent: {
-    type: Sequelize.ARRAY(Sequelize.TEXT),
-    allowNull: false,
+  introText: {
+    type: Sequelize.TEXT,
+    allowNull: true,
+  },
+  unitsForThisMonth: {
+    type: Sequelize.TEXT,
+  },
+  specialAnnouncements: {
+    type: Sequelize.TEXT,
+  },
+  activities: {
+    type: Sequelize.TEXT,
+  },
+  infoForSpecialDates: {
+    type: Sequelize.TEXT,
+  },
+  additionalInformation: {
+    type: Sequelize.TEXT,
   },
   imageContent: {
     type: Sequelize.TEXT,

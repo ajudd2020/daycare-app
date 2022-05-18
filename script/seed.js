@@ -60,10 +60,19 @@ async function seed() {
       title: "May Newsletter 2022",
       pageType: "newsletter",
       pageId: "mayNewsletter2022",
-      textContent: [
-        "<p>This is the test newsletter for MAY!</p><p>The events this month are: </p><ul><li>May 12 - Test Event</li><li>May 16 - Field Trip</li><li>May 30- Graduation party</li></ul><p><br></p><p>Make sure kids bring sunscreen for playing outside!</p>",
-        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut sem viverra aliquet eget sit. Purus semper eget duis at tellus. Egestas congue quisque egestas diam in arcu cursus. Nec ullamcorper sit amet risus nullam eget felis eget nunc. Netus et malesuada fames ac turpis egestas sed tempus. Turpis massa tincidunt dui ut ornare lectus. Tortor at risus viverra adipiscing. Fermentum et sollicitudin ac orci. Semper eget duis at tellus at urna condimentum. Purus faucibus ornare suspendisse sed nisi. Viverra orci sagittis eu volutpat odio facilisis. Cursus metus aliquam eleifend mi in nulla posuere.</p>",
-      ],
+      introText:
+        "<p>​​​​​​​​​​​​​​​​​​​Wow! The school year has really flown by and it’s time to reflect on this wonderful year. It has been an especially nice year with the help of all of our wonderful parents. All the staff would like to express what a pleasure we have had meeting all of you this year. Also, thank you from the bottom of our hearts for all the extras from each and every one of you. To those children going to Kindergarten, best wishes and have a delightful summer!</p><p>There are several important dates in this newsletter. Please take the time to jot them down. Thanks!!!</p>",
+      unitsForThisMonth:
+        "<p>The concepts covered this month will be Xx, Yy, and Zz, the numbers 9 and 10, and color review. Projects are planned to reflect these themes and also Spring. Watch for a special Mother’s Day Project! We will also be playing outside more and more when weather permits, so dress accordingly!</p>",
+      specialAnnouncements:
+        "<p>All the Classes for the fall 2022-2023 school year are filling up. If you have not registered yet please do so now! You must register for this fall, if you have not done so already. We still have openings. Space is FULL in the Toddler room, don’t assume you have a spot until you register! We love referrals! If you refer anyone and they register, let us know and we will give you a $25 credit.</p>",
+      activities:
+        "<p>May Activities: </p><ul><li>May 5 - Cinco de Mayo Party</li><li>May 30 - Memorial Day (School closed - Tuition due)</li></ul><p>June Activities: </p><ul><li>June 2 - Graduation practice during school hours</li><li>June 2 - Graduation Night</li></ul>",
+      infoForSpecialDates:
+        "<p>On May 5th, we will be celebrating Cinco de Mayo Day. Please bring a Mexican treat to share with the class (chips & salsa, chips & cheese). Please store brought treats only. Our country this month is Mexico. If your child has any items relating to Mexico, he/she can bring them to school.</p><p>School will be closed Memorial Day, May 30th. Full tuition due. I hope you will enjoy the day.</p>",
+      additionalInformation:
+        "<p>Please remember to put sunscreen on before coming to school when the weather starts getting nicer. We will reapply sunscreen in the afternoon. Daycare parents need to supply school with a bottle of sunscreen for the afternoon (No Spray Sunscreen please).</p><p><ul>Summer Camp starts June 6th.</ul>We hope you’ll join us for the many creative themes. It sure is a nice way to keep your child involved and stimulated. You can choose your weeks and be flexible in the days you attend. If you are currently enrolled there is no additional registration fee.</p><p>It is a joint venture in raising your child. The lines of communication are always open - JOYS AND CONCERNS</p><p>​<ul>Vacation Policy</ul> – We only allow for vacation time off during the summer with an advance two-week notice. There is no vacation time off during the school year. If you decide to take vacation during that time, full tuition is still due. We do offer a one-week winter break (week after Christmas)</p>",
+      imageContent: "may-flowers.png",
     },
   ];
 
