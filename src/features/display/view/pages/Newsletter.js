@@ -57,10 +57,11 @@ const Newsletter = ({ content }) => {
               width="45%"
               sx={{ p: 1 }}
             >
-              {renderParagraph(content[0].unitsForThisMonth)}
               {renderParagraph(content[0].infoForSpecialDates)}
             </Box>
           </Box>
+          <Box>{renderParagraph(content[0].unitsForThisMonth)}</Box>
+          <Box>{renderParagraph(content[0].additionalInformation)}</Box>
         </Box>
       ) : (
         ""
