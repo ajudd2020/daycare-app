@@ -29,9 +29,9 @@ const NavBar = () => {
             <NavBarText>Classes</NavBarText>
           </NavBarItem>
         </Link>
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/view/newsletters" style={{ textDecoration: "none" }}>
           <NavBarItem>
-            <NavBarText>TEST</NavBarText>
+            <NavBarText>Newsletters</NavBarText>
           </NavBarItem>
         </Link>
       </Box>
