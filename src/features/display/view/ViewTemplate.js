@@ -48,20 +48,26 @@ const ViewTemplate = () => {
       }
     }
   };
+  const height = windowDimensions.height;
 
   return (
     <Box
-      height={windowDimensions.height}
+      // height={windowDimensions.height}
       width={windowDimensions.width}
       sx={{
+        height: height,
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
       }}
     >
-      <NavBar />
-      {getInnerContainer()}
-      <Footer />
+      <Box sx={{ minHeight: "10%" }}>
+        <NavBar />
+      </Box>
+      <Box>{getInnerContainer()}</Box>
+      <Box>
+        <Footer />
+      </Box>
     </Box>
   );
 };

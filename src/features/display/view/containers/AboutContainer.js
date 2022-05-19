@@ -29,11 +29,7 @@ const AboutContainer = () => {
     }
   };
 
-  return (
-    <Box height="100%" width="100%">
-      {getInnerContainer()}
-    </Box>
-  );
+  return <Box sx={{ border: "2px pink solid" }}>{getInnerContainer()}</Box>;
 };
 
 export default AboutContainer;

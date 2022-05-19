@@ -9,19 +9,14 @@ const NavBar = () => {
 
   return (
     <Box
-      height="5%"
       sx={{
+        border: "2px black dashed",
         backgroundColor: "primary.dark",
         display: "flex",
-        p: 4,
+        p: 2,
         justifyContent: "space-between",
       }}
     >
-      {/* <Link to="/test" style={{ textDecoration: "none" }}>
-        <NavBarItem>
-          <NavBarText>Test</NavBarText>
-        </NavBarItem>
-      </Link> */}
       <Box>
         <Link to="/" style={{ textDecoration: "none" }}>
           <NavBarItem>

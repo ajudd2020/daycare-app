@@ -34,9 +34,11 @@ export const daycareTheme = createTheme({
 export const NavBarItem = styled(Box)(() => ({
   "&:hover": {
     borderBottom: `2px solid ${daycareTheme.palette.secondary.dark}`,
+    marginBottom: "0px",
   },
   maxHeight: "20px",
   marginLeft: 10,
+  marginBottom: "2px",
 }));
 
 export const NavBarText = styled(Typography)(() => ({

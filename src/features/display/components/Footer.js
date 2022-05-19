@@ -8,6 +8,7 @@ const Footer = () => {
 
   return (
     <Box
+      height="100%"
       display="flex"
       justifyContent="center"
       // position="fixed"
@@ -15,7 +16,6 @@ const Footer = () => {
       // width="100%"
       sx={{
         backgroundColor: "primary.dark",
-        p: 1,
       }}
     >
       <Box>
