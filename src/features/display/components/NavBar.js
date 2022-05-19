@@ -10,7 +10,6 @@ const NavBar = () => {
   return (
     <Box
       sx={{
-        border: "2px black dashed",
         backgroundColor: "primary.dark",
         display: "flex",
         p: 2,
